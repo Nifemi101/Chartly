@@ -37,11 +37,18 @@ export function Line<T = unknown>(props: LineProps<T>): React.JSX.Element {
     : undefined;
   const yFn = resolveYAccessor<T>(props, yAccessor);
 
+  const bandOffset =
+    "bandwidth" in xScale && typeof xScale.bandwidth === "function"
+      ? xScale.bandwidth() / 2
+      : 0;
+
   const points: Point<T>[] = data.map((d, index) => {
-    const x = xScale(xAccessor(d) as never) as number;
+    const x = (xScale(xAccessor(d) as never) as number) + bandOffset;
     const y = yScale(yFn(d) as never) as number;
     return { x, y, datum: d, index };
   });
+
+  // ...rest unchanged
 
   const pathGenerator = d3Line<Point<T>>()
     .x((p) => p.x)
