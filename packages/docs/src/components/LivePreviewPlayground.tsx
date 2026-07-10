@@ -194,33 +194,35 @@ export default function LivePreviewPlayground(): React.JSX.Element {
       </div>
 
       <div className="flex min-w-0 flex-col gap-4">
-        <div className="h-[240px] w-full rounded-lg border border-border bg-panel p-2 sm:h-[300px] sm:p-4">
-          <ChartContainer
-            data={data}
-            xKey="label"
-            xScaleType="band"
-            yKey="value"
-            yScaleType="linear"
-            margin={{ top: 12, right: 12, bottom: 28, left: 40 }}
-          >
-            {showArea && (
-              <LinearGradient
-                id="livePreviewFill"
-                from={color}
-                to={color}
-                fromOpacity={0.25}
-                toOpacity={0}
-              />
-            )}
-            <CartesianGrid stroke="#334155" strokeOpacity={0.75} dashArray="4 6" />
-            <XAxis stroke="#64748b" textFill="#cbd5e1" />
-            <YAxis stroke="#64748b" textFill="#cbd5e1" />
-            {showArea && <Area fill="url(#livePreviewFill)" curve={curve} />}
-            <Line stroke={color} strokeWidth={2} curve={curve} />
-            <Tooltip<Row> indicatorStroke={color} dotFill={color}>
-              {({ x, y, datum }) => <PreviewTooltip x={x} y={y} datum={datum} accent={color} />}
-            </Tooltip>
-          </ChartContainer>
+        <div className="h-[300px] w-full overflow-hidden rounded-lg border border-border bg-panel p-2 sm:h-[340px] sm:p-4">
+          <div className="h-full w-full">
+            <ChartContainer
+              data={data}
+              xKey="label"
+              xScaleType="band"
+              yKey="value"
+              yScaleType="linear"
+              margin={{ top: 12, right: 12, bottom: 28, left: 40 }}
+            >
+              {showArea && (
+                <LinearGradient
+                  id="livePreviewFill"
+                  from={color}
+                  to={color}
+                  fromOpacity={0.25}
+                  toOpacity={0}
+                />
+              )}
+              <CartesianGrid stroke="#334155" strokeOpacity={0.75} dashArray="4 6" />
+              <XAxis stroke="#64748b" textFill="#cbd5e1" />
+              <YAxis stroke="#64748b" textFill="#cbd5e1" />
+              {showArea && <Area fill="url(#livePreviewFill)" curve={curve} />}
+              <Line stroke={color} strokeWidth={2} curve={curve} />
+              <Tooltip<Row> indicatorStroke={color} dotFill={color}>
+                {({ x, y, datum }) => <PreviewTooltip x={x} y={y} datum={datum} accent={color} />}
+              </Tooltip>
+            </ChartContainer>
+          </div>
         </div>
 
         <div className="overflow-hidden rounded-lg border border-border bg-[#020617]">
