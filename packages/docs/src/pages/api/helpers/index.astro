@@ -2,7 +2,7 @@
 import { Code } from 'astro:components';
 import ApiLayout from '../../../layouts/ApiLayout.astro';
 
-const title = 'Helpers · API · Chartly';
+const title = 'Helpers · API · Chartlyx';
 ---
 
 <ApiLayout title={title}>
@@ -26,7 +26,7 @@ const title = 'Helpers · API · Chartly';
         given key set. Non-finite values are skipped rather than counted as
         <code>NaN</code>.
       </p>
-      <Code lang="ts" theme="github-dark" code={`import { stackSum } from "chartly";
+      <Code lang="ts" theme="github-dark" code={`import { stackSum } from "chartlyx";
 
 const yMax = stackSum(quarter, ["laptops", "phones", "tablets"]);
 // → the largest per-row sum of those three columns
@@ -56,7 +56,7 @@ const yMax = stackSum(quarter, ["laptops", "phones", "tablets"]);
         returns <code>"currentColor"</code> so charts don&rsquo;t render
         <code>undefined</code>-colored elements.
       </p>
-      <Code lang="ts" theme="github-dark" code={`import { pickColor, DEFAULT_STACK_COLORS } from "chartly";
+      <Code lang="ts" theme="github-dark" code={`import { pickColor, DEFAULT_STACK_COLORS } from "chartlyx";
 
 pickColor(DEFAULT_STACK_COLORS, 0);   // "#3b82f6"
 pickColor(DEFAULT_STACK_COLORS, 6);   // wraps → "#3b82f6"
@@ -73,7 +73,7 @@ pickColor([], 3);                     // "currentColor"`} />
         <code>StackedArea</code>, <code>Pie</code>, and <code>Radar</code> when
         no <code>colors</code> prop is provided.
       </p>
-      <Code lang="ts" theme="github-dark" code={`import { DEFAULT_STACK_COLORS } from "chartly";
+      <Code lang="ts" theme="github-dark" code={`import { DEFAULT_STACK_COLORS } from "chartlyx";
 
 // DEFAULT_STACK_COLORS = [
 //   "#3b82f6",  // blue
@@ -97,7 +97,7 @@ pickColor([], 3);                     // "currentColor"`} />
         The default margin used by <code>&lt;ChartContainer&gt;</code>. Merged
         with any <code>margin</code> prop you pass.
       </p>
-      <Code lang="ts" theme="github-dark" code={`import { DEFAULT_MARGIN } from "chartly";
+      <Code lang="ts" theme="github-dark" code={`import { DEFAULT_MARGIN } from "chartlyx";
 
 // DEFAULT_MARGIN = { top: 10, right: 10, bottom: 30, left: 40 }
 
@@ -109,10 +109,10 @@ pickColor([], 3);                     // "currentColor"`} />
       <h2 class="mb-2 text-2xl font-semibold text-text">VERSION</h2>
       <p class="mb-4 text-sm text-brand"><code>VERSION: string</code></p>
       <p class="mb-4">
-        The Chartly package version at build time. Useful for footers, about
+        The Chartlyx package version at build time. Useful for footers, about
         dialogs, or debug output.
       </p>
-      <Code lang="ts" theme="github-dark" code={`import { VERSION } from "chartly";
+      <Code lang="ts" theme="github-dark" code={`import { VERSION } from "chartlyx";
 
 console.log(VERSION); // e.g. "0.0.0"`} />
     </section>

@@ -2,7 +2,7 @@
 import { Code } from 'astro:components';
 import ApiLayout from '../../../layouts/ApiLayout.astro';
 
-const title = 'Types · API · Chartly';
+const title = 'Types · API · Chartlyx';
 ---
 
 <ApiLayout title={title}>
@@ -11,7 +11,7 @@ const title = 'Types · API · Chartly';
       <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-brand-strong">API reference</p>
       <h1 class="mb-4 text-4xl font-semibold tracking-tight text-text">Types</h1>
       <p class="max-w-[720px] text-lg leading-relaxed text-muted">
-        Every TypeScript type Chartly re-exports. Import with
+        Every TypeScript type Chartlyx re-exports. Import with
         <code>import type</code> so nothing lands in your bundle at runtime.
       </p>
     </header>
@@ -431,7 +431,7 @@ export type ScaleInput<S extends ScaleType> = S extends "linear"
       <p class="mb-4 text-sm text-brand"><code>{'KeysOfType<T, V>'}</code></p>
       <p class="mb-4">
         Utility type that filters <code>keyof T</code> down to keys whose
-        values extend <code>V</code>. Used throughout Chartly to constrain key
+        values extend <code>V</code>. Used throughout Chartlyx to constrain key
         props (<code>yKey</code>, <code>valueKey</code>, stack <code>keys</code>,
         radar <code>axes</code>).
       </p>

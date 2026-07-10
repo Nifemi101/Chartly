@@ -2,7 +2,7 @@
 import { Code } from 'astro:components';
 import GuideLayout from '../../layouts/GuideLayout.astro';
 
-const title = 'Guide · Chartly';
+const title = 'Guide · Chartlyx';
 ---
 
 <GuideLayout title={title}>
@@ -11,25 +11,25 @@ const title = 'Guide · Chartly';
       <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-brand-strong">Getting started</p>
       <h1 class="mb-4 text-4xl font-semibold tracking-tight text-text">Introduction</h1>
       <p class="max-w-[720px] text-lg leading-relaxed text-muted">
-        Chartly is a composable React charting library built on
+        Chartlyx is a composable React charting library built on
         <a href="https://d3js.org/" class="text-text underline decoration-border underline-offset-4 hover:decoration-brand-strong">D3</a>.
         Every chart is a tree of small, typed components you compose together &mdash; there
         is no monolithic <code>&lt;Chart&gt;</code> that takes 40 props. You bring the JSX,
-        Chartly brings the math.
+        Chartlyx brings the math.
       </p>
     </header>
 
     <section id="installation" class="mb-16 scroll-mt-24">
       <h2 class="mb-4 text-2xl font-semibold text-text">Installation</h2>
       <p class="mb-4">
-        Install Chartly from npm. React 18+ is a peer dependency &mdash; it is not
+        Install Chartlyx from npm. React 18+ is a peer dependency &mdash; it is not
         bundled with the library, so you must have it in your project already.
       </p>
-      <Code code={`npm install chartly`} lang="bash" theme="github-dark" />
+      <Code code={`npm install chartlyx`} lang="bash" theme="github-dark" />
       <p class="mb-4 mt-6">Or with your preferred package manager:</p>
-      <Code code={`pnpm add chartly
-yarn add chartly
-bun add chartly`} lang="bash" theme="github-dark" />
+      <Code code={`pnpm add chartlyx
+yarn add chartlyx
+bun add chartlyx`} lang="bash" theme="github-dark" />
       <p class="mt-6">
         The package ships in both ESM and CommonJS formats with full TypeScript
         declarations, so it works in modern bundlers (Vite, Next.js, Astro) and
@@ -44,7 +44,7 @@ bun add chartly`} lang="bash" theme="github-dark" />
         and a line. The container measures its parent and provides scales via
         React context; children read those scales to draw themselves.
       </p>
-      <Code lang="tsx" theme="github-dark" code={`import { ChartContainer, Line, XAxis, YAxis } from "chartly";
+      <Code lang="tsx" theme="github-dark" code={`import { ChartContainer, Line, XAxis, YAxis } from "chartlyx";
 
 const data = [
   { month: "Jan", revenue: 320 },
@@ -71,7 +71,7 @@ export function RevenueChart() {
   );
 }`} />
       <p class="mt-6">
-        Note the wrapping <code>div</code> with an explicit height. Chartly charts
+        Note the wrapping <code>div</code> with an explicit height. Chartlyx charts
         fill their parent &mdash; they never take a fixed <code>width</code> or
         <code>height</code> prop. This makes them responsive by default, but the
         parent needs to give them a size.
@@ -81,7 +81,7 @@ export function RevenueChart() {
     <section id="typescript" class="mb-16 scroll-mt-24">
       <h2 class="mb-4 text-2xl font-semibold text-text">TypeScript setup</h2>
       <p class="mb-4">
-        Chartly is written in TypeScript and every component is generic over your
+        Chartlyx is written in TypeScript and every component is generic over your
         data row type. You get autocomplete on <code>xKey</code>, <code>yKey</code>,
         and render-prop callbacks &mdash; without writing a single type annotation
         of your own.

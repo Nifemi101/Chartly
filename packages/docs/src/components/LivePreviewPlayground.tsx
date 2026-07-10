@@ -9,7 +9,7 @@ import {
   XAxis,
   YAxis,
   useChartContext,
-} from 'chartly';
+} from 'chartlyx';
 
 interface Row {
   label: string;
@@ -87,7 +87,7 @@ function PreviewTooltip({
 }
 
 function buildSource(color: string, curve: CurveType, showArea: boolean): string {
-  return `import { Area, CartesianGrid, ChartContainer, Line, LinearGradient, XAxis, YAxis } from 'chartly';
+  return `import { Area, CartesianGrid, ChartContainer, Line, LinearGradient, XAxis, YAxis } from 'chartlyx';
 
 <ChartContainer data={data} xKey="label" xScaleType="band" yKey="value" yScaleType="linear">
   ${showArea ? `<LinearGradient id="fill" from="${color}" to="${color}" fromOpacity={0.25} toOpacity={0} />\n  ` : ''}<CartesianGrid stroke="#334155" dashArray="4 6" />

@@ -1,0 +1,63 @@
+---
+import ExamplesLayout from '../../../../layouts/ExamplesLayout.astro';
+import ExampleShell from '../../../../components/ExampleShell.astro';
+import MultiSeriesRadar from '../../../../components/examples/MultiSeriesRadar.tsx';
+
+const title = 'Multi-series Radar · Examples · Chartlyx';
+
+const sourceCode = `import {
+  PolarChartContainer,
+  PolarTooltip,
+  Radar,
+  RadarAxes,
+  RadarGrid,
+} from "chartlyx";
+
+interface Player {
+  name: string;
+  speed: number;
+  power: number;
+  defense: number;
+  magic: number;
+  agility: number;
+}
+
+const data: Player[] = [
+  { name: "Alice", speed: 80, power: 70, defense: 60, magic: 85, agility: 75 },
+  { name: "Bob",   speed: 65, power: 90, defense: 75, magic: 40, agility: 60 },
+];
+
+const axes = ["speed", "power", "defense", "magic", "agility"] as const;
+
+export default function MultiSeriesRadar() {
+  return (
+    <div style={{ height: 380 }}>
+      <PolarChartContainer data={data} padding={28}>
+        <RadarGrid axesCount={axes.length} rings={4} stroke="#334155" />
+        <RadarAxes axes={axes} stroke="#475569" labelFill="#cbd5e1" />
+        <Radar<Player>
+          axes={axes} rowIndex={0} maxValue={100}
+          fill="#5eead4" fillOpacity={0.25} stroke="#5eead4" strokeWidth={2}
+          showPoints pointRadius={3}
+        />
+        <Radar<Player>
+          axes={axes} rowIndex={1} maxValue={100}
+          fill="#38bdf8" fillOpacity={0.25} stroke="#38bdf8" strokeWidth={2}
+          showPoints pointRadius={3}
+        />
+        <PolarTooltip<Player>>{/* HTML card centered on chart */}</PolarTooltip>
+      </PolarChartContainer>
+    </div>
+  );
+}`;
+---
+
+<ExamplesLayout title={title}>
+  <ExampleShell
+    title="Multi-series Radar"
+    description="Two overlaid radar polygons — Alice (teal) and Bob (blue) — comparing 5 stats. Each <code>&lt;Radar&gt;</code> owns its own hover state via <code>rowIndex</code>, and a single <code>&lt;PolarTooltip&gt;</code> renders the active player's full stat block from the polar context."
+    sourceCode={sourceCode}
+  >
+    <MultiSeriesRadar client:load slot="chart" />
+  </ExampleShell>
+</ExamplesLayout>

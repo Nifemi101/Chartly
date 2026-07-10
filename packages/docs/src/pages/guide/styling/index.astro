@@ -2,7 +2,7 @@
 import { Code } from 'astro:components';
 import GuideLayout from '../../../layouts/GuideLayout.astro';
 
-const title = 'Styling · Chartly';
+const title = 'Styling · Chartlyx';
 ---
 
 <GuideLayout title={title}>
@@ -11,7 +11,7 @@ const title = 'Styling · Chartly';
       <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-brand-strong">Styling</p>
       <h1 class="mb-4 text-4xl font-semibold tracking-tight text-text">Styling</h1>
       <p class="max-w-[720px] text-lg leading-relaxed text-muted">
-        Chartly emits bare SVG. There is no theme provider, no CSS-in-JS, no
+        Chartlyx emits bare SVG. There is no theme provider, no CSS-in-JS, no
         style props with magic behavior. Every visual choice is a plain SVG
         attribute you can tune per component.
       </p>
@@ -54,7 +54,7 @@ const title = 'Styling · Chartly';
 <Area fill="url(#gradient)" />`} />
       <p class="mt-6">
         For multi-series shapes (StackedBar, StackedArea, Pie), pass a
-        <code>colors</code> array. Chartly ships a 6-color default palette
+        <code>colors</code> array. Chartlyx ships a 6-color default palette
         as <a href="/guide/helpers/#default-colors" class="text-text underline decoration-border underline-offset-4 hover:decoration-brand-strong">DEFAULT_STACK_COLORS</a>.
       </p>
     </section>
@@ -81,7 +81,7 @@ const title = 'Styling · Chartly';
     <section id="dark-theme" class="mb-16 scroll-mt-24">
       <h2 class="mb-4 text-2xl font-semibold text-text">Dark theme</h2>
       <p class="mb-4">
-        There is no <code>theme</code> prop and no theme provider. Chartly
+        There is no <code>theme</code> prop and no theme provider. Chartlyx
         emits a bare <code>&lt;svg&gt;</code> with your styles &mdash; light,
         dark, or otherwise. For dark themes, set axis <code>stroke</code>
         and <code>textFill</code> to grays, use muted grid stroke, and pick

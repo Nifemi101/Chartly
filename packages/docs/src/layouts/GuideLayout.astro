@@ -107,9 +107,15 @@ const sidebar: NavSection[] = [
 ---
 
 <BaseLayout title={title}>
-  <div class="mx-[-1.5rem] flex flex-col gap-8 lg:flex-row lg:gap-10">
-    <aside class="lg:sticky lg:top-24 lg:h-[calc(100vh-8rem)] lg:w-64 lg:shrink-0 lg:overflow-y-auto">
-      <nav class="guide-nav px-6 pb-8 lg:pl-6 lg:pr-2" aria-label="Guide navigation">
+  <div class="flex flex-col gap-4 sm:mx-[-1.5rem] sm:gap-8 lg:flex-row lg:gap-10">
+    <details open class="sidebar-details rounded-lg border border-border bg-panel/40 lg:sticky lg:top-24 lg:h-[calc(100vh-8rem)] lg:w-64 lg:shrink-0 lg:overflow-y-auto lg:rounded-none lg:border-0 lg:bg-transparent">
+      <summary class="flex cursor-pointer select-none items-center justify-between px-4 py-3 text-sm font-semibold text-text lg:hidden">
+        Browse the guide
+        <svg class="summary-chevron h-4 w-4 text-muted transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </summary>
+      <nav class="guide-nav px-4 pb-6 pt-2 sm:px-6 lg:pl-6 lg:pr-2 lg:pt-0" aria-label="Guide navigation">
         {sidebar.map((section) => {
           const sectionActive = currentPath === section.basePath;
           return (
@@ -144,9 +150,9 @@ const sidebar: NavSection[] = [
           );
         })}
       </nav>
-    </aside>
+    </details>
 
-    <article class="min-w-0 flex-1 px-6 pb-16">
+    <article class="min-w-0 flex-1 pb-16 sm:px-6">
       <slot />
     </article>
   </div>
@@ -162,5 +168,23 @@ const sidebar: NavSection[] = [
   }
   .guide-nav::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.16);
+  }
+
+  /* Hide the browser's default triangle marker */
+  .sidebar-details summary::-webkit-details-marker {
+    display: none;
+  }
+  .sidebar-details summary {
+    list-style: none;
+  }
+  .sidebar-details[open] .summary-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* Desktop: always show sidebar contents regardless of open state */
+  @media (min-width: 1024px) {
+    .sidebar-details > nav {
+      display: block !important;
+    }
   }
 </style>

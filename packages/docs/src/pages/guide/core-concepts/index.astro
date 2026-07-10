@@ -2,7 +2,7 @@
 import { Code } from 'astro:components';
 import GuideLayout from '../../../layouts/GuideLayout.astro';
 
-const title = 'Core concepts · Chartly';
+const title = 'Core concepts · Chartlyx';
 ---
 
 <GuideLayout title={title}>
@@ -12,7 +12,7 @@ const title = 'Core concepts · Chartly';
       <h1 class="mb-4 text-4xl font-semibold tracking-tight text-text">Core concepts</h1>
       <p class="max-w-[720px] text-lg leading-relaxed text-muted">
         The four ideas &mdash; container, scales, context, and the render-prop pattern
-        &mdash; underneath every Chartly chart. Learn these once and every shape,
+        &mdash; underneath every Chartlyx chart. Learn these once and every shape,
         axis, and interaction component becomes predictable.
       </p>
     </header>
@@ -41,11 +41,11 @@ const title = 'Core concepts · Chartly';
       <h2 class="mb-4 text-2xl font-semibold text-text">Scales</h2>
       <p class="mb-4">
         A scale is a function that maps <em>data values</em> to <em>pixel positions</em>.
-        Chartly wraps three D3 scale types, chosen by the <code>xScaleType</code> /
+        Chartlyx wraps three D3 scale types, chosen by the <code>xScaleType</code> /
         <code>yScaleType</code> props:
       </p>
-      <div class="my-6 overflow-hidden rounded-lg border border-border">
-        <table class="w-full text-sm">
+      <div class="my-6 overflow-x-auto rounded-lg border border-border">
+        <table class="w-full min-w-[420px] text-sm">
           <thead class="bg-panel-soft">
             <tr>
               <th class="border-b border-border px-4 py-2 text-left font-semibold text-text">Type</th>
@@ -74,7 +74,7 @@ const title = 'Core concepts · Chartly';
         never involves re-passing <code>data</code>, <code>xScale</code>, etc.
         For custom components, use the <code>useChartContext</code> hook:
       </p>
-      <Code lang="tsx" theme="github-dark" code={`import { useChartContext } from "chartly";
+      <Code lang="tsx" theme="github-dark" code={`import { useChartContext } from "chartlyx";
 
 function CustomMarker() {
   const { data, xAccessor, yAccessor, xScale, yScale } = useChartContext();
@@ -93,7 +93,7 @@ function CustomMarker() {
     <section id="sizing" class="mb-16 scroll-mt-24">
       <h2 class="mb-4 text-2xl font-semibold text-text">Margins &amp; sizing</h2>
       <p class="mb-4">
-        Chartly bakes margins directly into the scale ranges, so the plot area
+        Chartlyx bakes margins directly into the scale ranges, so the plot area
         automatically excludes room for axes and labels. Override with the
         <code>margin</code> prop:
       </p>
@@ -111,9 +111,9 @@ function CustomMarker() {
     <section id="render-props" class="mb-16 scroll-mt-24">
       <h2 class="mb-4 text-2xl font-semibold text-text">Render-prop pattern</h2>
       <p class="mb-4">
-        Every customizable output in Chartly &mdash; tooltip contents, per-point
+        Every customizable output in Chartlyx &mdash; tooltip contents, per-point
         labels, pie centroid text &mdash; is a render prop. You pass a function,
-        Chartly calls it with typed positional data, and you return JSX.
+        Chartlyx calls it with typed positional data, and you return JSX.
       </p>
       <Code lang="tsx" theme="github-dark" code={`<Line<Row>
   label={({ x, y, datum, index }) =>

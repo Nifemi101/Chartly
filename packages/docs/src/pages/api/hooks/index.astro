@@ -2,7 +2,7 @@
 import { Code } from 'astro:components';
 import ApiLayout from '../../../layouts/ApiLayout.astro';
 
-const title = 'Hooks · API · Chartly';
+const title = 'Hooks · API · Chartlyx';
 ---
 
 <ApiLayout title={title}>
@@ -11,7 +11,7 @@ const title = 'Hooks · API · Chartly';
       <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-brand-strong">API reference</p>
       <h1 class="mb-4 text-4xl font-semibold tracking-tight text-text">Hooks</h1>
       <p class="max-w-[720px] text-lg leading-relaxed text-muted">
-        React hooks that read from Chartly&rsquo;s internal contexts. Use these
+        React hooks that read from Chartlyx&rsquo;s internal contexts. Use these
         to build custom components that participate in the chart layout &mdash;
         crosshairs, annotations, custom hover UI, markers.
       </p>
@@ -26,7 +26,7 @@ const title = 'Hooks · API · Chartly';
         over your row type so <code>data</code> is typed as
         <code>readonly T[]</code>.
       </p>
-      <Code lang="tsx" theme="github-dark" code={`import { useChartContext } from "chartly";
+      <Code lang="tsx" theme="github-dark" code={`import { useChartContext } from "chartlyx";
 
 interface Row { month: string; revenue: number }
 
@@ -78,7 +78,7 @@ function MyMarker() {
         Generic over your row type; both <code>data</code> and
         <code>valueAccessor</code> are typed to <code>T</code>.
       </p>
-      <Code lang="tsx" theme="github-dark" code={`import { usePolarChartContext } from "chartly";
+      <Code lang="tsx" theme="github-dark" code={`import { usePolarChartContext } from "chartlyx";
 
 interface Row { category: string; revenue: number }
 

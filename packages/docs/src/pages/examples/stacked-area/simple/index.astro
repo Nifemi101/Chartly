@@ -1,0 +1,73 @@
+---
+import ExamplesLayout from '../../../../layouts/ExamplesLayout.astro';
+import ExampleShell from '../../../../components/ExampleShell.astro';
+import StackedAreaChart from '../../../../components/examples/StackedAreaChart.tsx';
+
+const title = 'Stacked Area Chart · Examples · Chartlyx';
+
+const sourceCode = `import {
+  CartesianGrid,
+  ChartContainer,
+  DEFAULT_STACK_COLORS,
+  StackedArea,
+  Tooltip,
+  XAxis,
+  YAxis,
+  stackSum,
+} from "chartlyx";
+
+interface Row {
+  month: string;
+  desktop: number;
+  mobile: number;
+  tablet: number;
+}
+
+type StackKey = "desktop" | "mobile" | "tablet";
+
+const data: Row[] = [
+  { month: "Jan", desktop: 1400, mobile: 900,  tablet: 320 },
+  { month: "Feb", desktop: 1550, mobile: 1080, tablet: 380 },
+  // ...
+];
+
+const keys: StackKey[] = ["desktop", "mobile", "tablet"];
+
+export default function StackedAreaChartExample() {
+  return (
+    <div style={{ height: 380 }}>
+      <ChartContainer
+        data={data}
+        xKey="month"   xScaleType="band"
+        yKey="desktop" yScaleType="linear"
+        yDomain={[0, stackSum(data, keys)]}
+        margin={{ top: 20, right: 24, bottom: 34, left: 60 }}
+      >
+        <CartesianGrid stroke="#334155" strokeOpacity={0.75} dashArray="4 6" />
+        <XAxis stroke="#64748b" textFill="#cbd5e1" />
+        <YAxis
+          stroke="#64748b" textFill="#cbd5e1"
+          tickFormatter={(v) => \`\${(Number(v) / 1000).toFixed(1)}k\`}
+        />
+        <StackedArea<Row>
+          keys={keys}
+          colors={DEFAULT_STACK_COLORS}
+          curve="monotone"
+          fillOpacity={0.75}
+        />
+        <Tooltip<Row>>{/* multi-line tooltip */}</Tooltip>
+      </ChartContainer>
+    </div>
+  );
+}`;
+---
+
+<ExamplesLayout title={title}>
+  <ExampleShell
+    title="Stacked Area Chart"
+    description='Traffic by device type over seven months. Uses <code>curve="monotone"</code> for smooth interpolation between accumulated points — the top of each band tracks the running total, painting from bottom to top.'
+    sourceCode={sourceCode}
+  >
+    <StackedAreaChart client:load slot="chart" />
+  </ExampleShell>
+</ExamplesLayout>

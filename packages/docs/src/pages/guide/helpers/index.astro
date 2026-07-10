@@ -2,7 +2,7 @@
 import { Code } from 'astro:components';
 import GuideLayout from '../../../layouts/GuideLayout.astro';
 
-const title = 'Helpers · Chartly';
+const title = 'Helpers · Chartlyx';
 ---
 
 <GuideLayout title={title}>
@@ -24,7 +24,7 @@ const title = 'Helpers · Chartly';
         of keys. Use it to set the <code>yDomain</code> on a stacked chart in
         one line.
       </p>
-      <Code lang="tsx" theme="github-dark" code={`import { stackSum } from "chartly";
+      <Code lang="tsx" theme="github-dark" code={`import { stackSum } from "chartlyx";
 
 const yMax = stackSum(quarter, ["laptops", "phones", "tablets"]);
 
@@ -49,7 +49,7 @@ const yMax = stackSum(quarter, ["laptops", "phones", "tablets"]);
         exceed the palette length &mdash; safer than <code>colors[i]</code>,
         which returns <code>undefined</code> past the end.
       </p>
-      <Code lang="tsx" theme="github-dark" code={`import { pickColor, DEFAULT_STACK_COLORS } from "chartly";
+      <Code lang="tsx" theme="github-dark" code={`import { pickColor, DEFAULT_STACK_COLORS } from "chartlyx";
 
 // Safe for any i, even i > colors.length
 const color = pickColor(DEFAULT_STACK_COLORS, i);
@@ -71,7 +71,7 @@ const color = pickColor(DEFAULT_STACK_COLORS, i);
         and <code>Radar</code>. Import it and pass to <code>colors</code>, or
         use as a fallback in your own legend.
       </p>
-      <Code lang="tsx" theme="github-dark" code={`import { DEFAULT_STACK_COLORS } from "chartly";
+      <Code lang="tsx" theme="github-dark" code={`import { DEFAULT_STACK_COLORS } from "chartlyx";
 
 // DEFAULT_STACK_COLORS = [
 //   "#3b82f6",  // blue
@@ -97,7 +97,7 @@ const color = pickColor(DEFAULT_STACK_COLORS, i);
         <code>valueKey</code>, and other typed-key props so autocomplete only
         shows fields of the right shape.
       </p>
-      <Code lang="ts" theme="github-dark" code={`import type { KeysOfType } from "chartly";
+      <Code lang="ts" theme="github-dark" code={`import type { KeysOfType } from "chartlyx";
 
 interface Row {
   month: string;

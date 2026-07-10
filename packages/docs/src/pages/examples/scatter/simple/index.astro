@@ -1,0 +1,69 @@
+---
+import ExamplesLayout from '../../../../layouts/ExamplesLayout.astro';
+import ExampleShell from '../../../../components/ExampleShell.astro';
+import SimpleScatterChart from '../../../../components/examples/SimpleScatterChart.tsx';
+
+const title = 'Simple Scatter Chart · Examples · Chartlyx';
+
+const sourceCode = `import {
+  CartesianGrid,
+  ChartContainer,
+  Scatter,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "chartlyx";
+
+interface Row { age: number; income: number }
+
+const data: Row[] = [
+  { age: 22, income: 32 },
+  { age: 26, income: 41 },
+  // ...
+];
+
+export default function SimpleScatterChart() {
+  return (
+    <div style={{ height: 380 }}>
+      <ChartContainer
+        data={data}
+        xKey="age"    xScaleType="linear"
+        yKey="income" yScaleType="linear"
+        margin={{ top: 20, right: 24, bottom: 34, left: 52 }}
+      >
+        <CartesianGrid stroke="#334155" strokeOpacity={0.75} dashArray="4 6" />
+        <XAxis stroke="#64748b" textFill="#cbd5e1" label="Age" />
+        <YAxis
+          stroke="#64748b" textFill="#cbd5e1"
+          tickFormatter={(v) => \`\$\${v}k\`}
+        />
+        <Scatter fill="#5eead4" fillOpacity={0.75} radius={6} />
+        <Tooltip<Row> indicatorStroke="#5eead4" dotFill="#5eead4">
+          {({ x, y, datum }) => (
+            <g transform={\`translate(\${x + 12}, \${y - 48})\`}>
+              <rect width={130} height={44} rx={8}
+                fill="#0f172a" stroke="#334155" />
+              <text x={12} y={20} fontSize={11} fill="#94a3b8">
+                Age {datum.age}
+              </text>
+              <text x={12} y={36} fontSize={13} fill="#5eead4" fontWeight={600}>
+                \${datum.income}k / yr
+              </text>
+            </g>
+          )}
+        </Tooltip>
+      </ChartContainer>
+    </div>
+  );
+}`;
+---
+
+<ExamplesLayout title={title}>
+  <ExampleShell
+    title="Simple Scatter Chart"
+    description="Age vs. income for 14 fake survey respondents. Uses a linear x-scale (not band) so raw numeric x values place points at their actual positions."
+    sourceCode={sourceCode}
+  >
+    <SimpleScatterChart client:load slot="chart" />
+  </ExampleShell>
+</ExamplesLayout>

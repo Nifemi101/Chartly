@@ -1,0 +1,69 @@
+---
+import ExamplesLayout from '../../../../layouts/ExamplesLayout.astro';
+import ExampleShell from '../../../../components/ExampleShell.astro';
+import StackedBarChart from '../../../../components/examples/StackedBarChart.tsx';
+
+const title = 'Stacked Bar Chart · Examples · Chartlyx';
+
+const sourceCode = `import {
+  CartesianGrid,
+  ChartContainer,
+  DEFAULT_STACK_COLORS,
+  StackedBar,
+  Tooltip,
+  XAxis,
+  YAxis,
+  stackSum,
+} from "chartlyx";
+
+interface Row {
+  month: string;
+  laptops: number;
+  phones: number;
+  tablets: number;
+}
+
+type StackKey = "laptops" | "phones" | "tablets";
+
+const data: Row[] = [
+  { month: "Jan", laptops: 120, phones: 80,  tablets: 45 },
+  { month: "Feb", laptops: 140, phones: 90,  tablets: 55 },
+  // ...
+];
+
+const keys: StackKey[] = ["laptops", "phones", "tablets"];
+
+export default function StackedBarChartExample() {
+  return (
+    <div style={{ height: 380 }}>
+      <ChartContainer
+        data={data}
+        xKey="month"   xScaleType="band"
+        yKey="laptops" yScaleType="linear"
+        yDomain={[0, stackSum(data, keys)]}
+        margin={{ top: 20, right: 24, bottom: 34, left: 52 }}
+      >
+        <CartesianGrid stroke="#334155" strokeOpacity={0.75} dashArray="4 6" />
+        <XAxis stroke="#64748b" textFill="#cbd5e1" />
+        <YAxis stroke="#64748b" textFill="#cbd5e1" />
+        <StackedBar<Row>
+          keys={keys}
+          colors={DEFAULT_STACK_COLORS}
+          radius={4}
+        />
+        <Tooltip<Row>>{/* multi-line tooltip with per-key colors */}</Tooltip>
+      </ChartContainer>
+    </div>
+  );
+}`;
+---
+
+<ExamplesLayout title={title}>
+  <ExampleShell
+    title="Stacked Bar Chart"
+    description="Quarterly sales stacked by product category. The critical piece is <code>yDomain=[0, stackSum(data, keys)]</code> — without it, the top of the stack would clip since the auto-domain covers only the largest single key."
+    sourceCode={sourceCode}
+  >
+    <StackedBarChart client:load slot="chart" />
+  </ExampleShell>
+</ExamplesLayout>

@@ -7,7 +7,7 @@ import {
   YAxis,
   CartesianGrid,
   LinearGradient,
-} from 'chartly';
+} from 'chartlyx';
 
 interface Row {
   month: Date;

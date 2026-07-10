@@ -19,7 +19,7 @@ import {
   YAxis,
   stackSum,
   DEFAULT_STACK_COLORS,
-} from "chartly";
+} from "chartlyx";
 
 type ChartKey = "line" | "bar" | "donut" | "stacked" | "radar";
 

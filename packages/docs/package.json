@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.2",
-    "chartly": "file:../chartly",
+    "chartlyx": "file:../chartly",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "tailwindcss": "^4.3.2"

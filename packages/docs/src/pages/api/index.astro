@@ -2,7 +2,7 @@
 import { Code } from 'astro:components';
 import ApiLayout from '../../layouts/ApiLayout.astro';
 
-const title = 'API · Chartly';
+const title = 'API · Chartlyx';
 
 const quickRef: {
   name: string;
@@ -55,7 +55,7 @@ const kindClass: Record<string, string> = {
       <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-brand-strong">API reference</p>
       <h1 class="mb-4 text-4xl font-semibold tracking-tight text-text">API overview</h1>
       <p class="max-w-[720px] text-lg leading-relaxed text-muted">
-        Everything Chartly exports, verified against the source. Components,
+        Everything Chartlyx exports, verified against the source. Components,
         hooks, helpers, constants, and types &mdash; each with prop signatures
         and defaults straight from the code.
       </p>
@@ -64,7 +64,7 @@ const kindClass: Record<string, string> = {
     <section id="imports" class="mb-16 scroll-mt-24">
       <h2 class="mb-4 text-2xl font-semibold text-text">Imports &amp; version</h2>
       <p class="mb-4">
-        Chartly ships as a single package with a flat export surface &mdash;
+        Chartlyx ships as a single package with a flat export surface &mdash;
         everything lives at the top level, no sub-paths required.
       </p>
       <Code lang="tsx" theme="github-dark" code={`import {
@@ -101,7 +101,7 @@ const kindClass: Record<string, string> = {
   DEFAULT_STACK_COLORS,
   DEFAULT_MARGIN,
   VERSION,
-} from "chartly";
+} from "chartlyx";
 
 import type {
   ChartContainerProps,
@@ -140,19 +140,19 @@ import type {
   ScaleInput,
   Margin,
   KeysOfType,
-} from "chartly";`} />
+} from "chartlyx";`} />
       <p class="mt-6">
         The current package version is exposed as a runtime constant if you
         need to display it in your app:
       </p>
-      <Code lang="ts" theme="github-dark" code={`import { VERSION } from "chartly";
+      <Code lang="ts" theme="github-dark" code={`import { VERSION } from "chartlyx";
 console.log(VERSION); // "0.0.0"`} />
     </section>
 
     <section id="reference" class="mb-16 scroll-mt-24">
       <h2 class="mb-4 text-2xl font-semibold text-text">Quick reference</h2>
       <p class="mb-4">
-        Every symbol Chartly exports at a glance. Click any name to jump to
+        Every symbol Chartlyx exports at a glance. Click any name to jump to
         its detailed reference.
       </p>
       <div class="my-6 overflow-x-auto rounded-lg border border-border">

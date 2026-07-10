@@ -1,0 +1,74 @@
+---
+import ExamplesLayout from '../../../../layouts/ExamplesLayout.astro';
+import ExampleShell from '../../../../components/ExampleShell.astro';
+import DonutChart from '../../../../components/examples/DonutChart.tsx';
+
+const title = 'Donut Chart · Examples · Chartlyx';
+
+const sourceCode = `import { PolarChartContainer, Pie, PolarTooltip } from "chartlyx";
+
+interface Row { category: string; revenue: number }
+
+const data: Row[] = [
+  { category: "Laptops",     revenue: 4180 },
+  { category: "Phones",      revenue: 3080 },
+  { category: "Tablets",     revenue: 1650 },
+  { category: "Watches",     revenue: 880 },
+  { category: "Accessories", revenue: 1210 },
+];
+
+const colors = ["#5eead4", "#38bdf8", "#a78bfa", "#f472b6", "#fb923c"];
+const total = data.reduce((s, d) => s + d.revenue, 0);
+
+export default function DonutChart() {
+  return (
+    <div style={{ height: 380 }}>
+      <PolarChartContainer
+        data={data}
+        valueKey="revenue"
+        innerRadius={70}
+        padding={20}
+      >
+        <Pie<Row>
+          colors={colors}
+          stroke="#0a0a0a" strokeWidth={2}
+          label={({ centroid, datum }) => {
+            const pct = Math.round((datum.revenue / total) * 100);
+            if (pct < 8) return null;
+            return (
+              <text
+                x={centroid[0]} y={centroid[1]}
+                textAnchor="middle" dy="0.32em"
+                fontSize={12} fontWeight={700}
+                fill="#0f172a"
+              >
+                {pct}%
+              </text>
+            );
+          }}
+        />
+        <PolarTooltip<Row>>
+          {({ datum, cx, cy }) => {
+            const pct = Math.round((datum.revenue / total) * 100);
+            return (
+              <foreignObject x={cx - 70} y={cy - 30} width={140} height={60}>
+                {/* HTML tooltip card centered in donut hole */}
+              </foreignObject>
+            );
+          }}
+        </PolarTooltip>
+      </PolarChartContainer>
+    </div>
+  );
+}`;
+---
+
+<ExamplesLayout title={title}>
+  <ExampleShell
+    title="Donut Chart"
+    description="Revenue share by product category. <code>innerRadius=70</code> turns the pie into a donut; the tooltip uses <code>&lt;foreignObject&gt;</code> to render an HTML card centered in the hole. Slices under 8% suppress their inline label."
+    sourceCode={sourceCode}
+  >
+    <DonutChart client:load slot="chart" />
+  </ExampleShell>
+</ExamplesLayout>

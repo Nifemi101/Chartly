@@ -1,0 +1,69 @@
+---
+import ExamplesLayout from '../../../../layouts/ExamplesLayout.astro';
+import ExampleShell from '../../../../components/ExampleShell.astro';
+import SimpleBarChart from '../../../../components/examples/SimpleBarChart.tsx';
+
+const title = 'Simple Bar Chart · Examples · Chartlyx';
+
+const sourceCode = `import {
+  Bar,
+  CartesianGrid,
+  ChartContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "chartlyx";
+
+interface Row { product: string; units: number }
+
+const data: Row[] = [
+  { product: "Widgets",    units: 42 },
+  { product: "Gadgets",    units: 65 },
+  { product: "Gizmos",     units: 28 },
+  { product: "Doohickeys", units: 51 },
+  { product: "Phones",     units: 54 },
+  { product: "Tablets",    units: 38 },
+];
+
+export default function SimpleBarChart() {
+  return (
+    <div style={{ height: 380 }}>
+      <ChartContainer
+        data={data}
+        xKey="product" xScaleType="band"
+        yKey="units"   yScaleType="linear"
+        margin={{ top: 20, right: 24, bottom: 34, left: 52 }}
+      >
+        <CartesianGrid stroke="#334155" strokeOpacity={0.75} dashArray="4 6" />
+        <XAxis stroke="#64748b" textFill="#cbd5e1" />
+        <YAxis stroke="#64748b" textFill="#cbd5e1" />
+        <Bar fill="#38bdf8" fillOpacity={0.85} radius={4} />
+        <Tooltip<Row> indicatorStroke="#38bdf8" dotFill="#38bdf8">
+          {({ x, y, datum }) => (
+            <g transform={\`translate(\${x + 12}, \${y - 48})\`}>
+              <rect width={130} height={44} rx={8}
+                fill="#0f172a" stroke="#334155" />
+              <text x={12} y={20} fontSize={11} fill="#94a3b8">
+                {datum.product}
+              </text>
+              <text x={12} y={36} fontSize={13} fill="#38bdf8" fontWeight={600}>
+                {datum.units} units
+              </text>
+            </g>
+          )}
+        </Tooltip>
+      </ChartContainer>
+    </div>
+  );
+}`;
+---
+
+<ExamplesLayout title={title}>
+  <ExampleShell
+    title="Simple Bar Chart"
+    description="One bar per category with rounded corners and a band-scale x-axis. Bars share <code>xScale.bandwidth()</code> so widths stay consistent as the container resizes."
+    sourceCode={sourceCode}
+  >
+    <SimpleBarChart client:load slot="chart" />
+  </ExampleShell>
+</ExamplesLayout>

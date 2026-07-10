@@ -12,9 +12,9 @@ Chartly is a REACT LIBRARY — code that OTHER developers install into
 THEIR React apps. It's not a website. It's not an app you run. When
 finished, someone will do:
 
-    npm install chartly
+    npm install chartlyx
 
-    import { LineChart, Line } from "chartly";
+    import { LineChart, Line } from "chartlyx";
 
 ...in their own project, and use the chart components we've written.
 
@@ -32,10 +32,13 @@ A React APP does none of that. It bundles everything, ships to a
 website, and never gets imported.
 
 ------------------------------------------------------------
-1. WHY IS `node_modules/chartly` A SYMLINK?
+1. WHY IS `node_modules/chartlyx` A SYMLINK?
 ------------------------------------------------------------
 
-You noticed `node_modules/chartly` exists. That's not a mistake.
+You noticed `node_modules/chartlyx` exists. That's not a mistake.
+(Heads up: the package is published on npm as **chartlyx** because
+"chartly" was already taken. The folder on disk is still called
+`packages/chartly` — only the package NAME and the symlink change.)
 
 We're using an npm feature called WORKSPACES. It lets one repository
 hold multiple packages. Look at the folder layout:
@@ -47,7 +50,7 @@ hold multiple packages. Look at the folder layout:
     ├── .vscode/
     │   └── settings.json      <-- workspace TypeScript version pin
     ├── node_modules/
-    │   └── chartly -> ../packages/chartly    <-- SYMLINK (shortcut)
+    │   └── chartlyx -> ../packages/chartly   <-- SYMLINK (shortcut)
     └── packages/
         ├── chartly/           <-- the actual library
         └── docs/              <-- (empty for now — Phase 9)
@@ -84,15 +87,17 @@ When you run `npm install` in the root, npm looks at the root's
     "workspaces": ["packages/*"]
 
 ...and creates a symbolic link inside `node_modules/` for each
-package in `packages/`. So `node_modules/chartly` is literally a
-shortcut that points back at `packages/chartly`.
+package in `packages/`. So `node_modules/chartlyx` is literally a
+shortcut that points back at `packages/chartly`. (The symlink name
+matches the `name` field in `packages/chartly/package.json` —
+"chartlyx" — not the folder name.)
 
 WHY WE WANT THIS: eventually `packages/docs/` will be a demo site
-that IMPORTS chartly (like a real user would). Because of the
-symlink, when docs does `import { LineChart } from "chartly"`, it
+that IMPORTS chartlyx (like a real user would). Because of the
+symlink, when docs does `import { LineChart } from "chartlyx"`, it
 finds our in-development version — no publishing needed.
 
-You can safely ignore `node_modules/chartly`. It's just plumbing.
+You can safely ignore `node_modules/chartlyx`. It's just plumbing.
 
 ------------------------------------------------------------
 2. THE FOLDER YOU ACTUALLY CARE ABOUT: `packages/chartly/`
@@ -214,11 +219,11 @@ distributable JavaScript. Config says:
   consumer to provide React, and just import from it.
 
 --- `package.json` -------------------------------------------
-This is the file npm reads when someone installs "chartly". Key
+This is the file npm reads when someone installs "chartlyx". Key
 fields we set:
 
   "type": "module"    — this package is ESM by default
-  "main":    "./dist/index.cjs"  — if a CJS user requires "chartly",
+  "main":    "./dist/index.cjs"  — if a CJS user requires "chartlyx",
                                     give them this
   "module":  "./dist/index.js"   — if an ESM bundler imports it, give
                                     them this

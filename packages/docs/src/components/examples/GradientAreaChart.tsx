@@ -8,7 +8,7 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from "chartly";
+} from "chartlyx";
 
 interface Row {
   month: string;
