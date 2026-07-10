@@ -1930,7 +1930,7 @@ The public API right now (things exported from `src/index.ts`):
 
   Constants:
     DEFAULT_MARGIN           { top: 10, right: 10, bottom: 30, left: 40 }
-    VERSION                  "0.0.0"
+    VERSION                  "1.0.0"
 
 A minimal chart with a curved line, gradient area fill, and hover
 tooltip now compiles, renders, and looks like the reference image:

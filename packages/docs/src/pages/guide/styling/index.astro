@@ -20,7 +20,7 @@ const title = 'Styling · Chartlyx';
     <section id="gradient" class="mb-16 scroll-mt-24">
       <h2 class="mb-4 text-2xl font-semibold text-text">LinearGradient</h2>
       <p class="mb-4">
-        A convenience wrapper for SVG <code>&lt;defs&gt;</code> gradients &mdash;
+        A convenience wrapper for SVG <code>&lt;defs&gt;</code> gradients;
         the fading fill under an <code>&lt;Area&gt;</code> is the classic use
         case. Reference it from any <code>fill</code> or <code>stroke</code>
         prop as <code>url(#your-id)</code>.
@@ -35,7 +35,7 @@ const title = 'Styling · Chartlyx';
 />
 <Area fill="url(#fade)" />`} />
       <p class="mt-6">
-        The component is opt-in convenience &mdash; if you need something more
+        The component is opt-in convenience. If you need something more
         exotic (radial gradients, multi-stop, pattern fills), drop your own
         <code>&lt;defs&gt;</code> block into the chart&rsquo;s SVG tree instead.
       </p>
@@ -44,7 +44,7 @@ const title = 'Styling · Chartlyx';
     <section id="palettes" class="mb-16 scroll-mt-24">
       <h2 class="mb-4 text-2xl font-semibold text-text">Colors &amp; palettes</h2>
       <p class="mb-4">
-        Colors are plain SVG values &mdash; hex, <code>rgb()</code>, HSL, CSS
+        Colors are plain SVG values: hex, <code>rgb()</code>, HSL, CSS
         variables, or gradient URLs. Every shape accepts <code>fill</code>,
         <code>fillOpacity</code>, <code>stroke</code>, and <code>strokeWidth</code>
         (Line is stroke-only).
@@ -82,7 +82,7 @@ const title = 'Styling · Chartlyx';
       <h2 class="mb-4 text-2xl font-semibold text-text">Dark theme</h2>
       <p class="mb-4">
         There is no <code>theme</code> prop and no theme provider. Chartlyx
-        emits a bare <code>&lt;svg&gt;</code> with your styles &mdash; light,
+        emits a bare <code>&lt;svg&gt;</code> with your styles: light,
         dark, or otherwise. For dark themes, set axis <code>stroke</code>
         and <code>textFill</code> to grays, use muted grid stroke, and pick
         accent colors that pop on your background.
@@ -93,8 +93,8 @@ const title = 'Styling · Chartlyx';
 <Line stroke="#5eead4" strokeWidth={2} curve="monotone" />`} />
       <p class="mt-6">
         Because there&rsquo;s no theme lock-in, hooking chart colors up to CSS
-        custom properties &mdash; and having your app-wide dark-mode toggle
-        recolor charts for free &mdash; is a one-liner.
+        custom properties, and having your app-wide dark-mode toggle
+        recolor charts for free, is a one-liner.
       </p>
     </section>
 

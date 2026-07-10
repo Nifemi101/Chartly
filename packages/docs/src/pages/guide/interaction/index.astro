@@ -12,7 +12,7 @@ const title = 'Interaction · Chartlyx';
       <h1 class="mb-4 text-4xl font-semibold tracking-tight text-text">Interaction</h1>
       <p class="max-w-[720px] text-lg leading-relaxed text-muted">
         Making charts respond to the mouse. Chartlyx ships two tooltip components
-        &mdash; one for Cartesian, one for polar &mdash; plus the raw hover
+        (one for Cartesian, one for polar), plus the raw hover
         primitives for anything custom.
       </p>
     </header>
@@ -53,7 +53,7 @@ const title = 'Interaction · Chartlyx';
   {({ datum, cx, cy }) => (
     <foreignObject x={cx - 65} y={cy - 28} width={130} height={56}>
       <div className="tooltip-card">
-        {datum.category} &mdash; \${datum.revenue}
+        {datum.category}: \${datum.revenue}
       </div>
     </foreignObject>
   )}
@@ -64,8 +64,8 @@ const title = 'Interaction · Chartlyx';
       <h2 class="mb-4 text-2xl font-semibold text-text">Nearest-point lookup</h2>
       <p class="mb-4">
         For linear and time scales, Chartlyx uses <code>d3-array</code>&rsquo;s
-        <code>bisector</code> &mdash; an <code>O(log n)</code> binary search
-        &mdash; to locate the nearest data point to the mouse. Even with 100,000
+        <code>bisector</code>: an <code>O(log n)</code> binary search
+        to locate the nearest data point to the mouse. Even with 100,000
         points, lookup stays sub-microsecond.
       </p>
       <p class="mb-4">
@@ -76,7 +76,7 @@ const title = 'Interaction · Chartlyx';
       <p>
         Mouse position is read via
         <code>event.clientX - rect.left</code> against the overlay&rsquo;s
-        bounding rect &mdash; a cross-browser reliable pattern that avoids
+        bounding rect: a cross-browser reliable pattern that avoids
         <code>offsetX</code> quirks on SVG in Firefox.
       </p>
     </section>

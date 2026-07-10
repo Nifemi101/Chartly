@@ -5,10 +5,9 @@ All notable changes to **Chartlyx** are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.0.0] - 2026-07-10
 
-Everything below is in the current source tree but has not yet been published
-to npm. Version stays at `0.0.0` in `package.json` until the first release.
+First public release on npm.
 
 ### Added
 
@@ -75,5 +74,4 @@ to npm. Version stays at `0.0.0` in `package.json` until the first release.
 
 ---
 
-_This file will get a `[0.1.0]` entry (or similar) on the first published
-release, and every version after that gets its own dated section._
+_Future versions get their own dated section above._

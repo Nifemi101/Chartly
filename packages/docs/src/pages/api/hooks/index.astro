@@ -12,7 +12,7 @@ const title = 'Hooks · API · Chartlyx';
       <h1 class="mb-4 text-4xl font-semibold tracking-tight text-text">Hooks</h1>
       <p class="max-w-[720px] text-lg leading-relaxed text-muted">
         React hooks that read from Chartlyx&rsquo;s internal contexts. Use these
-        to build custom components that participate in the chart layout &mdash;
+        to build custom components that participate in the chart layout:
         crosshairs, annotations, custom hover UI, markers.
       </p>
     </header>
@@ -55,12 +55,12 @@ function MyMarker() {
 }`} />
       <h3 class="mt-6 mb-3 text-lg font-semibold text-text">Returned value</h3>
       <ul class="ml-6 list-disc space-y-1 text-muted">
-        <li><code>data: readonly T[]</code> &mdash; the rows passed to the container.</li>
-        <li><code>xScale, yScale</code> &mdash; D3 scale functions with margins baked in.</li>
-        <li><code>xAccessor, yAccessor</code> &mdash; resolved from <code>xKey</code>/<code>x</code> and <code>yKey</code>/<code>y</code>.</li>
-        <li><code>width, height</code> &mdash; measured container size in pixels.</li>
-        <li><code>innerWidth, innerHeight</code> &mdash; the plottable area (dimensions minus margins).</li>
-        <li><code>margin</code> &mdash; the final margin object (defaults merged with your override).</li>
+        <li><code>data: readonly T[]</code>: the rows passed to the container.</li>
+        <li><code>xScale, yScale</code>: D3 scale functions with margins baked in.</li>
+        <li><code>xAccessor, yAccessor</code>: resolved from <code>xKey</code>/<code>x</code> and <code>yKey</code>/<code>y</code>.</li>
+        <li><code>width, height</code>: measured container size in pixels.</li>
+        <li><code>innerWidth, innerHeight</code>: the plottable area (dimensions minus margins).</li>
+        <li><code>margin</code>: the final margin object (defaults merged with your override).</li>
       </ul>
       <h3 class="mt-6 mb-3 text-lg font-semibold text-text">Errors</h3>
       <p>
@@ -91,7 +91,7 @@ function CenterLabel() {
     innerRadius,        // inner radius (0 for pie, >0 for donut)
     padding,            // gap from container edge
     width, height,      // full container dimensions
-    activeIndex,        // number | null — which slice is hovered
+    activeIndex,        // number | null: which slice is hovered
     setActiveIndex,     // (i: number | null) => void
   } = usePolarChartContext<Row>();
 
@@ -105,12 +105,12 @@ function CenterLabel() {
 }`} />
       <h3 class="mt-6 mb-3 text-lg font-semibold text-text">Returned value</h3>
       <ul class="ml-6 list-disc space-y-1 text-muted">
-        <li><code>data: readonly T[]</code>, <code>valueAccessor: (d: T) =&gt; number</code> &mdash; both narrowed to <code>T</code>.</li>
-        <li><code>cx, cy</code> &mdash; center coordinates.</li>
-        <li><code>radius, innerRadius</code> &mdash; outer and inner radius.</li>
-        <li><code>padding, width, height</code> &mdash; container geometry.</li>
-        <li><code>activeIndex</code> &mdash; index of the currently-hovered slice/polygon, or <code>null</code>.</li>
-        <li><code>setActiveIndex</code> &mdash; setter for custom hover targets (e.g. a legend that highlights on hover).</li>
+        <li><code>data: readonly T[]</code>, <code>valueAccessor: (d: T) =&gt; number</code>: both narrowed to <code>T</code>.</li>
+        <li><code>cx, cy</code>: center coordinates.</li>
+        <li><code>radius, innerRadius</code>: outer and inner radius.</li>
+        <li><code>padding, width, height</code>: container geometry.</li>
+        <li><code>activeIndex</code>: index of the currently-hovered slice/polygon, or <code>null</code>.</li>
+        <li><code>setActiveIndex</code>: setter for custom hover targets (e.g. a legend that highlights on hover).</li>
       </ul>
     </section>
 

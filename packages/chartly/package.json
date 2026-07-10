@@ -1,6 +1,6 @@
 {
   "name": "chartlyx",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "TypeScript-first, D3-powered React charting library",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -37,8 +37,17 @@
     "typescript",
     "svg"
   ],
-  "author": "",
+  "author": "Nifemi",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nifemi101/Chartlyx.git",
+    "directory": "packages/chartly"
+  },
+  "homepage": "https://chartlyx-docs.vercel.app/",
+  "bugs": {
+    "url": "https://github.com/Nifemi101/Chartlyx/issues"
+  },
   "dependencies": {
     "d3-array": "^3.2.4",
     "d3-scale": "^4.0.2",

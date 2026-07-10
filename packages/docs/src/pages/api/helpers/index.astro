@@ -12,7 +12,7 @@ const title = 'Helpers · API · Chartlyx';
       <h1 class="mb-4 text-4xl font-semibold tracking-tight text-text">Helpers</h1>
       <p class="max-w-[720px] text-lg leading-relaxed text-muted">
         Runtime utilities and constants exported alongside the components. All
-        of these are tree-shakeable &mdash; import only what you use.
+        of these are tree-shakeable: import only what you use.
       </p>
     </header>
 
@@ -40,7 +40,7 @@ const yMax = stackSum(quarter, ["laptops", "phones", "tablets"]);
 </ChartContainer>`} />
       <p class="mt-6">
         Required when using <code>&lt;StackedBar&gt;</code> or
-        <code>&lt;StackedArea&gt;</code> &mdash; the container&rsquo;s auto-computed
+        <code>&lt;StackedArea&gt;</code>. The container&rsquo;s auto-computed
         y-domain covers only the largest single key, so the top of the stack
         would otherwise clip.
       </p>
@@ -114,7 +114,7 @@ pickColor([], 3);                     // "currentColor"`} />
       </p>
       <Code lang="ts" theme="github-dark" code={`import { VERSION } from "chartlyx";
 
-console.log(VERSION); // e.g. "0.0.0"`} />
+console.log(VERSION); // e.g. "1.0.0"`} />
     </section>
 
     <div class="mt-16 flex items-center justify-between border-t border-border pt-8">

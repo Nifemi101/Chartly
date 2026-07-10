@@ -56,7 +56,7 @@ const kindClass: Record<string, string> = {
       <h1 class="mb-4 text-4xl font-semibold tracking-tight text-text">API overview</h1>
       <p class="max-w-[720px] text-lg leading-relaxed text-muted">
         Everything Chartlyx exports, verified against the source. Components,
-        hooks, helpers, constants, and types &mdash; each with prop signatures
+        hooks, helpers, constants, and types, each with prop signatures
         and defaults straight from the code.
       </p>
     </header>
@@ -64,7 +64,7 @@ const kindClass: Record<string, string> = {
     <section id="imports" class="mb-16 scroll-mt-24">
       <h2 class="mb-4 text-2xl font-semibold text-text">Imports &amp; version</h2>
       <p class="mb-4">
-        Chartlyx ships as a single package with a flat export surface &mdash;
+        Chartlyx ships as a single package with a flat export surface:
         everything lives at the top level, no sub-paths required.
       </p>
       <Code lang="tsx" theme="github-dark" code={`import {
@@ -146,7 +146,7 @@ import type {
         need to display it in your app:
       </p>
       <Code lang="ts" theme="github-dark" code={`import { VERSION } from "chartlyx";
-console.log(VERSION); // "0.0.0"`} />
+console.log(VERSION); // "1.0.0"`} />
     </section>
 
     <section id="reference" class="mb-16 scroll-mt-24">

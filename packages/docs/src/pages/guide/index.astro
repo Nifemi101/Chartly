@@ -13,7 +13,7 @@ const title = 'Guide · Chartlyx';
       <p class="max-w-[720px] text-lg leading-relaxed text-muted">
         Chartlyx is a composable React charting library built on
         <a href="https://d3js.org/" class="text-text underline decoration-border underline-offset-4 hover:decoration-brand-strong">D3</a>.
-        Every chart is a tree of small, typed components you compose together &mdash; there
+        Every chart is a tree of small, typed components you compose together. There
         is no monolithic <code>&lt;Chart&gt;</code> that takes 40 props. You bring the JSX,
         Chartlyx brings the math.
       </p>
@@ -22,7 +22,7 @@ const title = 'Guide · Chartlyx';
     <section id="installation" class="mb-16 scroll-mt-24">
       <h2 class="mb-4 text-2xl font-semibold text-text">Installation</h2>
       <p class="mb-4">
-        Install Chartlyx from npm. React 18+ is a peer dependency &mdash; it is not
+        Install Chartlyx from npm. React 18+ is a peer dependency: it is not
         bundled with the library, so you must have it in your project already.
       </p>
       <Code code={`npm install chartlyx`} lang="bash" theme="github-dark" />
@@ -72,7 +72,7 @@ export function RevenueChart() {
 }`} />
       <p class="mt-6">
         Note the wrapping <code>div</code> with an explicit height. Chartlyx charts
-        fill their parent &mdash; they never take a fixed <code>width</code> or
+        fill their parent. They never take a fixed <code>width</code> or
         <code>height</code> prop. This makes them responsive by default, but the
         parent needs to give them a size.
       </p>
@@ -83,7 +83,7 @@ export function RevenueChart() {
       <p class="mb-4">
         Chartlyx is written in TypeScript and every component is generic over your
         data row type. You get autocomplete on <code>xKey</code>, <code>yKey</code>,
-        and render-prop callbacks &mdash; without writing a single type annotation
+        and render-prop callbacks, without writing a single type annotation
         of your own.
       </p>
       <Code lang="tsx" theme="github-dark" code={`interface Row {

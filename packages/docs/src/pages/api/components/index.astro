@@ -13,7 +13,7 @@ const title = 'Components · API · Chartlyx';
       <h1 class="mb-4 text-4xl font-semibold tracking-tight text-text">Components</h1>
       <p class="max-w-[720px] text-lg leading-relaxed text-muted">
         Every component Chartlyx renders. Props tables are generated straight
-        from the source &mdash; if a prop appears here, it exists.
+        from the source. If a prop appears here, it exists.
       </p>
     </header>
 
@@ -39,7 +39,7 @@ const title = 'Components · API · Chartlyx';
         { name: 'margin', type: 'Partial<Margin>', default: 'DEFAULT_MARGIN', description: 'Overrides the built-in margins. Merged with defaults.' },
         { name: 'minHeight', type: 'number', default: '300', description: 'Fallback height before <code>ResizeObserver</code> reports a real size.' },
         { name: 'yDomain', type: '[number, number]', description: 'Explicit y-domain. Required for stacked charts; otherwise inferred from data.' },
-        { name: 'children', type: 'ReactNode', description: 'Shapes, axes, grid, tooltip &mdash; anything that reads chart context.' },
+        { name: 'children', type: 'ReactNode', description: 'Shapes, axes, grid, tooltip: anything that reads chart context.' },
       ]} />
     </section>
 

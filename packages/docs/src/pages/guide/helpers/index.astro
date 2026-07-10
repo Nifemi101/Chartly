@@ -46,7 +46,7 @@ const yMax = stackSum(quarter, ["laptops", "phones", "tablets"]);
       <h2 class="mb-4 text-2xl font-semibold text-text">pickColor</h2>
       <p class="mb-4">
         Cycles through a color array by index. Wraps around when your keys
-        exceed the palette length &mdash; safer than <code>colors[i]</code>,
+        exceed the palette length. Safer than <code>colors[i]</code>,
         which returns <code>undefined</code> past the end.
       </p>
       <Code lang="tsx" theme="github-dark" code={`import { pickColor, DEFAULT_STACK_COLORS } from "chartlyx";
@@ -84,7 +84,7 @@ const color = pickColor(DEFAULT_STACK_COLORS, i);
 
 <StackedBar keys={keys} colors={DEFAULT_STACK_COLORS} />`} />
       <p class="mt-6">
-        Swap in your own array of any length &mdash; <code>pickColor</code>
+        Swap in your own array of any length: <code>pickColor</code>
         cycles indefinitely, so shorter palettes still work with wide stacks.
       </p>
     </section>
@@ -111,7 +111,7 @@ type NumericKey = KeysOfType<Row, number>;
 // Passing "month" here would be a compile error:
 <ChartContainer<Row> yKey="revenue" ... />`} />
       <p class="mt-6">
-        Use it in your own components too &mdash; anywhere you accept a
+        Use it in your own components too, anywhere you accept a
         <em>key of a specific type</em>, <code>KeysOfType</code> lets you keep
         autocomplete honest.
       </p>

@@ -39,7 +39,7 @@ const { rows } = Astro.props;
           <td class="px-4 py-3 align-top">
             {row.default
               ? <code class="whitespace-nowrap text-[0.8rem] text-muted">{row.default}</code>
-              : <span class="text-[0.8rem] text-muted">&mdash;</span>}
+              : <span class="text-[0.8rem] text-muted">-</span>}
           </td>
           <td class="px-4 py-3 align-top text-muted" set:html={row.description} />
         </tr>
